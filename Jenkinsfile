@@ -16,12 +16,11 @@ pipeline {
                 sh './gradlew test'
             }
         }
-    }
-    
-    post {
-        always {
-            archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
-            junit 'build/test-results/test/*.xml'
+        stage('Build') {
+            steps {
+                archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
+                junit 'build/test-results/test/*.xml'
+            }
         }
-    } 
+    }
 }
