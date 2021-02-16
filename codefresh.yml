@@ -18,6 +18,9 @@ steps:
     revision: "${{CF_BRANCH}}"
     git: "MuhammadWara-Personal-GitToken"
     stage: "clone"
+    commands:
+      - "ls -la"
+      - "pwd"
 
   build:
     title: "Building Docker image"
