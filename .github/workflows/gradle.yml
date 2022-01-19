@@ -26,5 +26,6 @@ jobs:
       run: ./gradlew build
     - name: View self hosted
       run: ls
+      
     - name: Build with Gradle
       run: ls -lah ./build/libs/      
