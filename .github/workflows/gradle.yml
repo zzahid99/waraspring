@@ -23,7 +23,9 @@ jobs:
         ARTIFACTORY_PASSWORD: ${{secrets.ARTIFACTORY_PASSWORD}}        
 
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: |
+        chmod +x gradlew
+        printenv
     - name: Clean with Gradle
       run: ./gradlew clean      
     - name: Build with Gradle
