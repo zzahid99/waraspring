@@ -12,8 +12,7 @@ jobs:
     runs-on: self-hosted
     env:
       ARTIFACTORY_USERNAME: Khanwara1@gmail.com
-      ARTIFACTORY_PASSWORD: AKCp8kqWt6LF7Ei1RSHUgP8ry5EvnQbRPBAMTjvaz9cn1ogmpELFGpWwStnDiaUMsmLEX1yTx       
-      ARTIFACTORY_PASSSWORD: ${{ secrets.ARTIFACTORY_PASSWORD}}
+      ARTIFACTORY_PASSWORD: ${{ secrets.MySec.ARTIFACTORY_PASSWORD}}
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
