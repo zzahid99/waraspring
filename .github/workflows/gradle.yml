@@ -18,13 +18,15 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+      env:
+        ARTIFACTORY_USERNAME: ${{secrets.ARTIFACTORY_USERNAME}}
+        ARTIFACTORY_PASSWORD: ${{secrets.ARTIFACTORY_PASSWORD}}        
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Clean with Gradle
       run: ./gradlew clean      
     - name: Build with Gradle
       run: ./gradlew build
-    - name: View self hosted
-      run: ls 
-    - name: Build with Gradle
-      run: ls -lah ./build/libs/ 
+    - name: Upload Artifact 
+      run: ./gradlew uploadArchives
