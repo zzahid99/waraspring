@@ -13,6 +13,7 @@ jobs:
     env:
       ARTIFACTORY_USERNAME: Khanwara1@gmail.com
       ARTIFACTORY_PASSWORD: ${{ secrets.MySec.ARTIFACTORY_PASSWORD}}
+      ARTIFACTORY_PASSSSWORD: ${{env.API_KEY}}
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
