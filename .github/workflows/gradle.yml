@@ -11,7 +11,7 @@ jobs:
 
     runs-on: self-hosted
     env:
-      ARTIFACTORY_USERNAME: Khanwara1@gmail.com
+      ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
       ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
       #ARTIFACTORY_PASSSSWORD: ${{env.API_KEY}}
     steps:
