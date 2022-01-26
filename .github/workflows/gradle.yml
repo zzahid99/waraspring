@@ -19,8 +19,8 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
       env:
-        ARTIFACTORY_USERNAME: ${{ MySec.ARTIFACTORY_USERNAME }}
-        ARTIFACTORY_PASSWORD: ${{ MySec.ARTIFACTORY_PASSWORD }}        
+        ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+        ARTIFACTORY_PASSWORD: ${{ secrets.MySec.ARTIFACTORY_PASSWORD }}        
 
     - name: Grant execute permission for gradlew
       run: |
