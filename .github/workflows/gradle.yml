@@ -47,6 +47,6 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: |
-        'gcloud info'
+        gcloud info
         gcloud auth configure-docker us-west1-docker.pkg.dev
         
