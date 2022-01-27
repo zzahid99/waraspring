@@ -38,6 +38,7 @@ jobs:
         #export IMAGE_NAME=$(ls build/libs | sed  s/.jar/""/)        
         #export IMAGE_VERSION=$(echo $IMAGE_NAME | awk -F'[-]' '{print $5,$6}' | sed s/" "/-/ )
         export IMAGE_NAME=springboot
-        IMAGE_VERSION=$(echo $IMAGE_NAME | awk -F'[-]' '{print $5}' )
+        export IMAGE_VERSION=1.1
+        #"$(echo $IMAGE_NAME | awk -F'[-]' '{print $5}' )"
         docker build -t $IMAGE_NAME:$IMAGE_VERSION .
         docker images
