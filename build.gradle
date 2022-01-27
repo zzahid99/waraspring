@@ -72,9 +72,10 @@ uploadArchives {
         maven{
             credentials {
                 username System.getenv('ARTIFACTORY_USERNAME')
-                password System.getenv('ARTIFACTORY_PASSWORD')
+                password System.getenv('ARTIFACTORY_PASSWORD_GCP')
             }
-            url "https://mwara.jfrog.io/artifactory/spring-boot-api-docker/"
+            url System.getenv('ARTIFACTORY_URL')
+            //url "https://mwara.jfrog.io/artifactory/spring-boot-api-docker/"
         }
     }
 }
