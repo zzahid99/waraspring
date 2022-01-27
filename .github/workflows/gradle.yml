@@ -21,8 +21,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Set up Docker Buildx
+    - name: 'Set up Docker Buildx'
       uses: docker/setup-buildx-action@v1 
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v0'
     
     - name: Grant execute permission for gradlew
       run: |
@@ -42,3 +44,9 @@ jobs:
         #"$(echo $IMAGE_NAME | awk -F'[-]' '{print $5}' )"
         docker build -t $IMAGE_NAME:$IMAGE_VERSION .
         docker images
+
+    - name: 'Use gcloud CLI'
+      run: |
+        'gcloud info'
+        gcloud auth configure-docker us-west1-docker.pkg.dev
+        
