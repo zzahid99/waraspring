@@ -49,4 +49,4 @@ jobs:
       run: |
         gcloud info
         gcloud auth configure-docker us-west1-docker.pkg.dev
-        docker push us-west1-docker.pkg.dev/metal-coil-337319/local-non-prod/$IMAGE_NAME:$IMAGE_VERSION
+        docker push local-non-prod/$IMAGE_NAME:$IMAGE_VERSION
