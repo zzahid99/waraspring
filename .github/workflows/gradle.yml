@@ -42,11 +42,11 @@ jobs:
         export IMAGE_NAME=springboot
         export IMAGE_VERSION=1.1
         #"$(echo $IMAGE_NAME | awk -F'[-]' '{print $5}' )"
-        docker build -t $IMAGE_NAME:$IMAGE_VERSION .
+        #docker build -t $IMAGE_NAME:$IMAGE_VERSION .
         docker images
 
     - name: 'Use gcloud CLI'
       run: |
         gcloud info
         gcloud auth configure-docker us-west1-docker.pkg.dev
-        docker push local-non-prod/$IMAGE_NAME:$IMAGE_VERSION
+        echo "local-non-prod/$IMAGE_NAME:$IMAGE_VERSION"
