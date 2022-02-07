@@ -45,6 +45,6 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: |
-        printenv | grep IMAGE_VERSION
+        printenv
         export IMAGE_NAME=springboot
         echo ${IMAGE_VERSION}
