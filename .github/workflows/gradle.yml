@@ -23,8 +23,8 @@ jobs:
         distribution: 'temurin'
     - name: 'Set up Docker Buildx'
       uses: docker/setup-buildx-action@v1 
-    - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v0'
+    #- name: 'Set up Cloud SDK'
+      #uses: 'google-github-actions/setup-gcloud@v0'
     
     - name: Grant execute permission for gradlew
       run: |
@@ -47,9 +47,9 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: |
-        gcloud info
+        #gcloud info
         export IMAGE_NAME=springboot
         echo $IMAGE_VERSION
-        gcloud auth configure-docker us-west1-docker.pkg.dev
+        #gcloud auth configure-docker us-west1-docker.pkg.dev
         docker tag $IMAGE_NAME:$IMAGE_VERSION us-west1-docker.pkg.dev/metal-coil-337319/local-non-prod/$IMAGE_NAME:$IMAGE_VERSION
         docker push us-west1-docker.pkg.dev/metal-coil-337319/local-non-prod/$IMAGE_NAME:$IMAGE_VERSION
