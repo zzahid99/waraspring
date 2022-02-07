@@ -38,7 +38,8 @@ jobs:
     - name: Upload Artifact 
       run: |
         export IMAGE_NAME=springboot
-        echo IMAGE_VERSION=1.1 > $GITHUB_ENV
+        ./gradlew properties | grep version > $GITHUB_ENV
+        $echo IMAGE_VERSION=1.1 > $GITHUB_ENV
       #env:
        # IMAGE_VERSIONN:$IMAGE_VERSION
 
@@ -46,4 +47,4 @@ jobs:
       run: |
         printenv
         export IMAGE_NAME=springboot
-        echo ${IMAGE_VERSION}
+        echo ${version}
