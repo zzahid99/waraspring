@@ -39,6 +39,7 @@ jobs:
       run: |
         export IMAGE_NAME=springboot
         export IMAGE_VERSION=1.1
+        echo ${IMAGE_VERSION}
 
     - name: 'Use gcloud CLI'
       run: |
