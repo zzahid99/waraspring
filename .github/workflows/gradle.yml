@@ -38,8 +38,7 @@ jobs:
     - name: Upload Artifact 
       run: |
         export IMAGE_NAME=springboot
-        export IMAGE_VERSION=1.1
-        echo $IMAGE_VERSION
+        echo IMAGE_VERSION=1.1 > $GITHUB_ENV
       #env:
        # IMAGE_VERSIONN:$IMAGE_VERSION
 
