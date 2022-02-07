@@ -34,7 +34,7 @@ steps:
   test:
     title: "Running test"
     type: "freestyle" # Run any command
-    image: "gradle:6.8-jdk11-openj9" # The image in which command will be executed
+    image: "gradle:6.8
     working_directory: "${{clone}}" # Running command where code cloned
     commands:
       - "echo 'Muhammad Wara First Codefresh Pipeline'"
