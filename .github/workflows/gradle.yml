@@ -49,7 +49,7 @@ jobs:
       run: |
         gcloud info
         export IMAGE_NAME=springboot
-        export IMAGE_VERSION=1.1
+        echo $IMAGE_VERSION
         gcloud auth configure-docker us-west1-docker.pkg.dev
         docker tag $IMAGE_NAME:$IMAGE_VERSION us-west1-docker.pkg.dev/metal-coil-337319/local-non-prod/$IMAGE_NAME:$IMAGE_VERSION
         docker push us-west1-docker.pkg.dev/metal-coil-337319/local-non-prod/$IMAGE_NAME:$IMAGE_VERSION
