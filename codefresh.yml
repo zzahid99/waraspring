@@ -32,7 +32,7 @@ steps:
     stage: "build"
 
   test:
-    title: "Running test"
+    title: "Running test "
     type: "freestyle" # Run any command
     image: "gradle:6.8
     working_directory: "${{clone}}" # Running command where code cloned
