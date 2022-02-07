@@ -40,4 +40,4 @@ steps:
       - "echo 'Muhammad Wara First Codefresh Pipeline'"
       - "gradle build"
       - "gradle test"
-    stage: "building"
+    stage: "building" 
