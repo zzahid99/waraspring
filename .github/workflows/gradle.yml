@@ -36,6 +36,7 @@ jobs:
     #- name: Build with Gradle
       #run: ./gradlew build
     - name: Upload Artifact 
+    - id: version_step
       run: |
         export IMAGE_NAME=springboot
         ./gradlew properties | grep version > $GITHUB_ENV
