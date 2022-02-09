@@ -49,6 +49,7 @@ jobs:
         echo ${version}
 
   publish:
+    needs : build
     runs-on: self-hosted
     env:
       ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
