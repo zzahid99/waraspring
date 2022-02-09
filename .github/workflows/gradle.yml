@@ -37,9 +37,8 @@ jobs:
       #run: ./gradlew build
     - id: version_step
       run: |
-        export IMAGE_NAME=springboot
         ./gradlew properties | grep version > $GITHUB_ENV
-        $echo IMAGE_VERSION=1.1 > $GITHUB_ENV
+        echo IMAGE_VERSION=1.1 > $GITHUB_ENV
       #env:
        # IMAGE_VERSIONN:$IMAGE_VERSION
 
@@ -61,5 +60,5 @@ jobs:
       run: |
         printenv
         echo "This is version"
-        echo ${version}
+        echo ${emv.IMAGE_VERSION}
     
