@@ -61,5 +61,5 @@ jobs:
       run: |
         printenv
         echo "This is version"
-        echo ${env.IMAGE_VERSION}
+        echo ${{ env.IMAGE_VERSION }}
     
