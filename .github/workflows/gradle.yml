@@ -48,3 +48,18 @@ jobs:
         printenv
         export IMAGE_NAME=springboot
         echo ${version}
+
+  publish:
+    runs-on: self-hosted
+    env:
+      ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+      ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+      #ARTIFACTORY_PASSSSWORD: ${{env.API_KEY}}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      run: |
+        printenv
+        echo "This is version"
+        echo ${version}
+    
