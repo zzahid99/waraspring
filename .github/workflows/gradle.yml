@@ -10,6 +10,8 @@ jobs:
   build:
 
     runs-on: self-hosted
+    outputs:
+      output1: ${{ steps.version_step.outputs.IMAGE_VERSION }}
     env:
       ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
       ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
@@ -37,8 +39,10 @@ jobs:
       #run: ./gradlew build
     - id: version_step
       run: |
-        ./gradlew properties | grep version > $GITHUB_ENV
         echo IMAGE_VERSION=1.1 > $GITHUB_ENV
+        echo "::set-output name=IMAGE_VERSION::1.1"
+        
+        
       #env:
        # IMAGE_VERSIONN:$IMAGE_VERSION
 
