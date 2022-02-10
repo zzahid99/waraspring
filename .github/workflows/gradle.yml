@@ -41,7 +41,7 @@ jobs:
       run: |
         echo IMAGE_VERSION=1.1 > $GITHUB_ENV
         echo "::set-output name=IMAGE_VERSION::1.1"
-        console.log('::save-state name=VERSION::12345')
+        echo "::save-state name=VERSION::12345"
         
         
       #env:
