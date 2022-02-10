@@ -1,0 +1,19 @@
+name: Java CI with Gradle
+
+on:
+   workflow_run:
+    workflows: [gradle]
+    types:
+    - completed  
+ 
+jobs:
+  build:
+
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      run: |
+        echo ${{needs.build.outputs.output1}}
+        echo "This is version"
+        echo ${{ env.IMAGE_VERSION }}
