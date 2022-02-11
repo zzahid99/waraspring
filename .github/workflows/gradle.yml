@@ -55,7 +55,3 @@ jobs:
         touch vars.env
         echo ${{ env.IMAGE_VERSION }} > vars.env
 
-    - name: Set Environment Variables
-      uses: tw3lveparsecs/github-actions-setvars@v0.1
-      with:
-       envFilePath: .github/vars.env
