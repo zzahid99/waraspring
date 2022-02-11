@@ -53,4 +53,13 @@ jobs:
         printenv
         export IMAGE_NAME=springboot
         echo ${{ env.IMAGE_VERSION }}
+    - name: Save PR number
+      run: |
+          mkdir -p ./pr
+          touch visuval.txt
+          echo "version=1.1" > visuval.txt
+    - uses: actions/upload-artifact@v2
+      with:
+          name: visuval
+          path: pr/
     
