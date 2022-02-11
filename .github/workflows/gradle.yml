@@ -52,14 +52,9 @@ jobs:
       run: |
         printenv
         export IMAGE_NAME=springboot
-        echo ${{ env.IMAGE_VERSION }}
-    - name: Save PR number
-      run: |
-          mkdir -p ./pr
-          touch visuval.txt
-          echo "version=1.1" > visuval.txt
-    - uses: actions/upload-artifact@v2
+        echo ${{ env.IMAGE_VERSION }} > vars.env
+
+    - name: Set Environment Variables
+      uses: tw3lveparsecs/github-actions-setvars@v0.1
       with:
-          name: visuval
-          path: pr/
-    
+       envFilePath: /.github/variables/vars.env
