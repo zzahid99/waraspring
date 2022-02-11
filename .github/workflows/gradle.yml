@@ -54,4 +54,5 @@ jobs:
         export IMAGE_NAME=springboot
         touch vars.env
         echo ${{ env.IMAGE_VERSION }} > vars.env
+        cd abc
 
