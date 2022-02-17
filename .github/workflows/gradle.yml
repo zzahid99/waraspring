@@ -40,8 +40,7 @@ jobs:
     - id: version_step
       run: |
         echo IMAGE_VERSION=1.1 > $GITHUB_ENV
-        echo "::set-output name=IMAGE_VERSION::1.1"
-        echo "::save-state name=VERSION::12345"
+        echo "$GITHUB_SHA"
         curl -X PUT -H "Accept: application/vnd.github.v3+json" https://api.github.com/MuhammadWara/waraspring/actions/secrets -d '{"version":"1234"}'
         
         
