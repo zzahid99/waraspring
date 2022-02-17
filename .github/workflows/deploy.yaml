@@ -16,5 +16,5 @@ jobs:
       run: |
         echo The running PID from the main action is: " +  process.env.VERSION"
         echo "This is version"
-        echo ${{ env.VERSION }}
+        echo ${{ GITHUB_SHA }}
  
