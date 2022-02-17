@@ -33,25 +33,9 @@ jobs:
         chmod +x gradlew
         echo $ARTIFACTORY_PASSWORD
        
-    #- name: Clean with Gradle
-      #run: ./gradlew clean      
-    #- name: Build with Gradle
-      #run: ./gradlew build
     - id: version_step
       run: |
         echo IMAGE_VERSION=1.1 > $GITHUB_ENV
         echo "$GITHUB_SHA"
-        curl -X PUT -H "Accept: application/vnd.github.v3+json" https://api.github.com/MuhammadWara/waraspring/actions/secrets -d '{"version":"1234"}'
-        
-        
-      #env:
-       # IMAGE_VERSIONN:$IMAGE_VERSION
 
-    - name: 'Use gcloud CLI'
-      run: |
-        printenv
-        export IMAGE_NAME=springboot
-        touch vars.env
-        echo ${{ env.IMAGE_VERSION }} > vars.env
-        cd abc
 
