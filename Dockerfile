@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROOM openjdk:11
 ARG PORT=8080
 ARG APPLICATION_VERSION="0.1.0-SNAPSHOT"
 ARG SERVICE_NAME="spring-boot-api-example"
