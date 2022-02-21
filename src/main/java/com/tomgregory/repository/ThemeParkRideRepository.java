@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface ThemeParkRideRepository extends CrudRepository<ThemeParkRide, Long> {
     List<ThemeParkRide> findByName(String name);
+    sttrinaf
 }
