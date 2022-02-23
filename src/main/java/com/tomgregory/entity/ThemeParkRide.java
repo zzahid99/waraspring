@@ -1,4 +1,4 @@
-package com.tomgregory.entity
+package com.tomgregory.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
