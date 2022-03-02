@@ -1,0 +1,19 @@
+name: deploy
+
+on:
+   workflow_run:
+    workflows: [gradle]
+    types:
+    - completed  
+ 
+jobs:
+  on-success:
+    #if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - id: version_step
+      run: |
+        echo IMAGE_VERSION=1.1 > $GITHUB_ENV
+        echo "$GITHUB_SHA"
+ 

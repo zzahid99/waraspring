@@ -7,9 +7,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+
                 sh './gradlew clean build'
-                sh './gradlew assemble'
-            }
+                
+               }
         }
         stage('Test') {
             steps {
